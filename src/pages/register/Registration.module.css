@@ -7,7 +7,6 @@
   background-size: 180% 180%;
   animation: gradient-animation 18s ease infinite;
 }
-
 @keyframes gradient-animation {
   0% {
     background-position: 0% 50%;
@@ -18,4 +17,70 @@
   100% {
     background-position: 0% 50%;
   }
+}
+
+/* Formulario */
+.contform {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 20px; /* Añadir un poco de padding para el contenido */
+  background: white; /* Fondo blanco para el formulario */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.contform input {
+  margin-bottom: 10px; /* Espacio entre los inputs */
+  padding: 10px; /* Padding interno de los inputs */
+  border: 1px solid #ccc; /* Borde de los inputs */
+  border-radius: 4px; /* Bordes redondeados de los inputs */
+}
+
+.contform input:hover{
+  border-color: #ff6900;
+}
+.contform input:focus{
+  border-color: #ff6900;
+  outline: none;
+}
+
+.contform button {
+  padding: 10px;
+  background-color: #ff6900;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all s;
+}
+
+.contform button:hover {
+  background-color: #ff5700; /* Color más oscuro al pasar el ratón */
+}
+
+.contform p {
+  margin-top: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.link{
+  color: #ff6900;
+}
+
+.link:hover{
+  color: #ff5700;
+}
+
+/* Logo */
+.contlogo{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.logo{
+  width: 150px;
 }
