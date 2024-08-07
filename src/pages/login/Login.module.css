@@ -1,4 +1,3 @@
-/* Registration.module.css */
 .gradientcontainer {
   display: flex;
   justify-content: center;
@@ -20,9 +19,11 @@
   }
 }
 
+/* Formulario */
 .contform {
   display: flex;
   flex-direction: column;
+  width: 300px;
   padding: 20px; /* Añadir un poco de padding para el contenido */
   background: white; /* Fondo blanco para el formulario */
   border-radius: 8px; /* Bordes redondeados */
@@ -36,6 +37,14 @@
   border-radius: 4px; /* Bordes redondeados de los inputs */
 }
 
+.contform input:hover{
+  border-color: #ff6900;
+}
+.contform input:focus{
+  border-color: #ff6900;
+  outline: none;
+}
+
 .contform button {
   padding: 10px;
   background-color: #ff6900;
@@ -44,6 +53,7 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  transition: all s;
 }
 
 .contform button:hover {
@@ -53,4 +63,24 @@
 .contform p {
   margin-top: 10px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.link{
+  color: #ff6900;
+}
+
+.link:hover{
+  color: #ff5700;
+}
+
+/* Logo */
+.contlogo{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.logo{
+  width: 150px;
 }

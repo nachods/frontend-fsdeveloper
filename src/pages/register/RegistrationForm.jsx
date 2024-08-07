@@ -16,6 +16,16 @@ const RegistrationForm = () => {
           placeholder="Nombre"
         />
         <input
+          type="text"
+          name="lastname"
+          placeholder="Apellido"
+        />
+        <input
+          type="number"
+          name="lastname"
+          placeholder="Teléfono"
+        />
+        <input
           type="email"
           name="email"
           placeholder="Correo Electrónico"
@@ -27,7 +37,7 @@ const RegistrationForm = () => {
         />
         <button>Registrarse</button>
         <p>
-        ¿Ya tienes una cuenta? <Link className={styles.link} to="/login">Iniciar sesión</Link>
+          ¿Ya tienes una cuenta? <Link className={styles.link} to="/login">Iniciar sesión</Link>
         </p>
       </div>
     </div>
