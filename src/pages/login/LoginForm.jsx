@@ -24,6 +24,10 @@ const LoginForm = () => {
         <p>
         ¿No tienes una cuenta? <Link className={styles.link} to="/">Registrate ahora</Link>
         </p>
+        <div className={styles.contcontc}>
+          <i className="bi bi-whatsapp"></i>
+          <i className="bi bi-instagram"></i>
+        </div>
       </div>
     </div>
   );

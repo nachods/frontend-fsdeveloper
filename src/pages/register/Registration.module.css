@@ -5,7 +5,7 @@
   min-height: 100vh; /* Ocupa toda la altura de la página */
   background: linear-gradient(300deg, #ffdd00, #ff6900, #ff0000);
   background-size: 180% 180%;
-  animation: gradient-animation 18s ease infinite;
+  animation: gradient-animation 10s ease infinite;
 }
 @keyframes gradient-animation {
   0% {
@@ -83,4 +83,31 @@
 }
 .logo{
   width: 150px;
+}
+
+/* Logos de Contacto */
+.contcontc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.contcontc i{
+  color: #ff6900;
+  font-size: 20px;
+  padding: 0px 20px 0px 20px;
+}
+
+/* Tablet */
+@media (min-width:768px){
+  .contform{
+    width: 500px;
+  }
+}
+
+/* Pc */
+@media (min-width:1024px){
+  .contform{
+    width: 700px;
+  }
 }

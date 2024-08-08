@@ -84,3 +84,30 @@
 .logo{
   width: 150px;
 }
+
+/* Logos de Contacto */
+.contcontc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.contcontc i{
+  color: #ff6900;
+  font-size: 20px;
+  padding: 0px 20px 0px 20px;
+}
+
+/* Tablet */
+@media (min-width:768px){
+  .contform{
+    width: 500px;
+  }
+}
+
+/* Pc */
+@media (min-width:1024px){
+  .contform{
+    width: 700px;
+  }
+}

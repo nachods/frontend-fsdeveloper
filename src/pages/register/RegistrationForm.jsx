@@ -39,9 +39,14 @@ const RegistrationForm = () => {
         <p>
           ¿Ya tienes una cuenta? <Link className={styles.link} to="/login">Iniciar sesión</Link>
         </p>
+        <div className={styles.contcontc}>
+          <i className="bi bi-whatsapp"></i> 
+          <i className="bi bi-instagram"></i>
+        </div>
       </div>
     </div>
   );
 }
+///Los i de whatsapp e instagram deberian de ser botones, pero como no hay redes en si de la pagina, no lo hice
 
 export default RegistrationForm;
