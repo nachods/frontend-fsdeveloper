@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh; /* Ocupa toda la altura de la página */
-  background: linear-gradient(300deg, #ffdd00, #ff6900, #ff0000);
+  background: linear-gradient(300deg, #A8D5BA, #77B28C, #4E8A5A);
   background-size: 180% 180%;
   animation: gradient-animation 18s ease infinite;
 }
@@ -38,16 +38,16 @@
 }
 
 .contform input:hover{
-  border-color: #ff6900;
+  border-color: #66C29E;
 }
 .contform input:focus{
-  border-color: #ff6900;
+  border-color: #66C29E;
   outline: none;
 }
 
 .contform button {
   padding: 10px;
-  background-color: #ff6900;
+  background-color: #66C29E;
   color: white;
   border: none;
   border-radius: 4px;
@@ -57,7 +57,7 @@
 }
 
 .contform button:hover {
-  background-color: #ff5700; /* Color más oscuro al pasar el ratón */
+  background-color: #57A07A; /* Color más oscuro al pasar el ratón */
 }
 
 .contform p {
@@ -68,11 +68,11 @@
 }
 
 .link{
-  color: #ff6900;
+  color: #66C29E;
 }
 
 .link:hover{
-  color: #ff5700;
+  color: #57A07A;
 }
 
 /* Logo */
@@ -93,7 +93,7 @@
   flex-direction: row;
 }
 .contcontc i{
-  color: #ff6900;
+  color: #57A07A;
   font-size: 20px;
   padding: 0px 20px 0px 20px;
 }

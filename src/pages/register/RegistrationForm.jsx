@@ -6,7 +6,7 @@ import Logo from '../../assets/images/logo.png';
 const RegistrationForm = () => {
   return (
     <div className={styles.gradientcontainer}>
-      <div className={styles.contform}>
+      <form className={styles.contform}>
         <div className={styles.contlogo}>
           <img className={styles.logo} src={Logo} alt='logo'></img>
         </div>
@@ -35,7 +35,7 @@ const RegistrationForm = () => {
           name="password"
           placeholder="Contraseña"
         />
-        <button>Registrarse</button>
+        <button type='submit'>Registrarse</button>
         <p>
           ¿Ya tienes una cuenta? <Link className={styles.link} to="/login">Iniciar sesión</Link>
         </p>
@@ -43,7 +43,7 @@ const RegistrationForm = () => {
           <i className="bi bi-whatsapp"></i> 
           <i className="bi bi-instagram"></i>
         </div>
-      </div>
+      </form>
     </div>
   );
 }
