@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.carousel {
+    width: 100%;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    position: relative;
+    padding: 20px 0px;
+    background-color: #097d4c;
+  }
+  
+  .carouselInner {
+    display: flex;
+    width: 100%; /* 100% * número de imágenes */
+    transition: transform 1s ease-in-out; /* Suaviza la transición */
+    animation: slide 30s infinite; /* Animación infinita */
+  }
+  
+  .carouselItem {
+    flex: 1 0 100%; /* Cada imagen ocupa el 100% del contenedor */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .carouselItem div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff5d1;
+    border-radius: 5px;
+    width: 100%;
+    height: 80%;
+  }
+  .carouselItem h5{
+    font-family: 'Dancing Script', cursive;
+    font-size: 70px;
+    color: #df3821;
+    font-weight: bold;
+  }
+  .carouselItem p{
+    font-weight: bold;
+  }
+  .carousel img {
+    width: 100%; /* Ajusta el ancho de la imagen al contenedor */
+    display: block;
+  }
