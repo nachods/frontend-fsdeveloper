@@ -1,0 +1,95 @@
+body{
+    background-color: #fff5d1;
+}
+/*  */
+/*  */
+.container{
+    margin-top: 50px;
+}
+/*  */
+/*  */
+.containerTitle{
+    background: linear-gradient(to bottom, #097d4c, rgba(9, 125, 76, 0.5) 85%, transparent 100%);
+    color: #fff5d1;
+    padding: 50px 30px 200px 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.containerTitle h1{
+    font-size: 40px;
+}
+.containerTitle button{
+    margin: 5px;
+    padding: 5px;
+    width: 50px;
+    background-color: #df3821;
+    border: 1px solid #c4311e;
+    border-radius: 10px;
+    color: #fff5d1;
+    font-weight: 500;
+    transition: all 0.5s ease-in-out;
+}
+.containerTitle button:hover {
+    background-color: #c4311e;
+}
+/*  */
+/*  */
+.containerMenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/*  */
+/*  */
+.Menu{
+    border: 5px solid #df3821;
+    border-radius: 20px;
+    background-color: #097d4c;
+    width: 470px;
+    margin: 20px 5px;
+    position: relative;
+}
+.MenuImg{
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    object-fit: cover;
+}
+.subMenu{
+    padding: 20px;
+    color: #fff5d1;
+}
+.MenuPrice{
+    position: absolute;
+    top: 10px; /* Ajusta el espacio desde el borde superior */
+    right: 10px; /* Ajusta el espacio desde el borde derecho */
+    background-color: #097d4c; /* Puedes cambiar el color de fondo según tu preferencia */
+    padding: 5px 10px;
+    border-radius: 10px; /* Redondea las esquinas del fondo del precio */
+    color: #fff5d1; /* Color del texto del precio */
+    font-weight: bold;
+}
+.MenuButton{
+    background-color: #fff5d1;
+    padding: 5px 10px;
+    border: 2px solid #e4ddc3;
+    border-radius: 10px;
+    color: #097d4c;
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
+}
+.MenuButton:hover{
+    background-color: #e4ddc3;
+}
+/*  */
+/*  */
+.containerFooter{
+    padding-bottom: 20px;
+  }
+  .containerFooter p{
+    padding-top: 50px;
+    text-align: center;
+    color: #097d4c;
+  }

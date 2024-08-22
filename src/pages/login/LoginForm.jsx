@@ -1,12 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
-import { Link } from 'react-router-dom';
 import Logo from '../../assets/images/logo.png';
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/home');
+  };
+
   return (
     <div className={styles.gradientcontainer}>
-      <form className={styles.contform}>
+      <form className={styles.contform} onSubmit={handleSubmit}>
         <div className={styles.contlogo}>
           <img className={styles.logo} src={Logo} alt='logo'></img>
         </div>
@@ -22,7 +29,7 @@ const LoginForm = () => {
         />
         <button type='submit'>Iniciar Sesión</button>
         <p>
-        ¿No tienes una cuenta? <Link className={styles.link} to="/">Registrate ahora</Link>
+          ¿No tienes una cuenta? <a className={styles.link} href="/">Registrate ahora</a>
         </p>
         <div className={styles.contcontc}>
           <i className="bi bi-whatsapp"></i>
@@ -33,4 +40,4 @@ const LoginForm = () => {
   );
 }
 
-export default LoginForm
+export default LoginForm;

@@ -16,7 +16,7 @@
     width: 237px;
 }
 
-.navRight button {
+.closeSession,.carrito{
     margin: 5px;
     padding: 5px;
     width: 120px;
@@ -28,7 +28,11 @@
     transition: all 0.5s ease-in-out;
 }
 
-.navRight button:hover {
+.carrito{
+    width: 50px;
+}
+
+.closeSession:hover,.carrito:hover {
     background-color: #c4311e;
 }
 

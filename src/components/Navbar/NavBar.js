@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './NavBar.module.css';
 import DesignNav from '../../assets/images/DiseñoNavBar.png';
 
@@ -25,6 +26,13 @@ const NavBar = () => {
     };
   }, [lastScrollY]); //el lastScrollY, nos dice que solo se ejecutara si el mismo 'lastScrollY' cambia 
 
+  const navigate = useNavigate(); // Hook para redirigir al usuario
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Evita que el formulario se envíe y recargue la página
+    navigate('/login'); // Redirige al usuario a la página de inicio
+  };
+
   return (
     //clase dinamica del primer div para saber cuando mostrarse, si es true muestra Visible, sino Hidden
     <div className={`${styles.NavBar} ${showNavbar ? styles.visible : styles.hidden}`}> 
@@ -32,7 +40,8 @@ const NavBar = () => {
         <img src={DesignNav} alt='navBar.png' />
       </div>
       <div className={styles.navRight}>
-        <button>Cerrar Sesión</button>
+        <button className={styles.carrito}><i class="bi bi-cart"></i></button>
+        <button className={styles.closeSession} onClick={handleSubmit}>Cerrar Sesión</button>
       </div>
     </div>
   );

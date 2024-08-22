@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import RegistrationForm from "../pages/register/RegistrationForm";
 import LoginForm from "../pages/login/LoginForm";
 import HomePage from "../pages/home/HomePage";
+import MenuPage from "../pages/menues/MenuPage";
 import NavBar from "../components/Navbar/NavBar";
 
 const AppRouter = () => {
@@ -16,6 +17,7 @@ const AppRouter = () => {
         <Route path='/login' element={<LoginForm />} />
         <Route path='*' element={<LoginForm />} />
         <Route path='/home' element={<HomePage />} />
+        <Route path='/menu' element={<MenuPage />} />
       </Routes>
     </>
   );

@@ -16,7 +16,6 @@
     transform: translateX(0);
   }
 }
-
 .carousel {
     width: 100%;
     overflow: hidden; /* Oculta el contenido que se desborda */
@@ -60,4 +59,20 @@
   .carousel img {
     width: 100%; /* Ajusta el ancho de la imagen al contenedor */
     display: block;
+  }
+
+  @media (min-width:1024px){
+    .carousel{
+      padding-left: 900px;
+      padding-right: 900px;
+    }
+    .carouselInner,.carouselItem{
+      height: 300px;
+    }
+    .carouselInner h5{
+      font-size: 80px;
+    }
+    .carouselInner p{
+      font-size: 20px;
+    }
   }

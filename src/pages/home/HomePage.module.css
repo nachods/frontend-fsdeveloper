@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
-
 body{
   background-color: #fff5d1;
 }
@@ -163,4 +162,61 @@ body{
   padding-top: 50px;
   text-align: center;
   color: #fff5d1;
+}
+
+@media (min-width:1024px){
+  .containerPrimary{
+    justify-content: space-around;
+    flex-direction: row;
+    margin-left: 300px;
+    margin-right: 300px;
+  }
+  .title{
+    font-size: 180px;
+  }
+  .imgPrimary{
+    width: 650px;
+  }
+  .containerP{
+    font-size: 35px;
+    margin-left: 300px;
+    margin-right: 300px;
+  }
+  .containerCarousel h4{
+    font-size: 45px;
+  }
+  .containerMenu p{
+    font-size: 45px;
+  }
+  .containerMenu button{
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    border-radius: 40px;
+    width: 350px;
+    height: 70px;
+  }
+  .containerMenu button{
+    font-size: 28px;
+  }
+  .containerCarouselPhotos{
+    padding: 100px;
+  }
+  .containerInformation div{
+    padding: 130px 200px;
+  }
+  .containerInformationTitle{
+    font-size: 40px;
+  }
+  .containerInformationHours{
+    font-size: 33px;
+  }
+  .containerInformationDirecc{
+    font-size: 28px;
+  }
+  .containerButton{
+    font-weight: 400;
+    padding: 15px;
+    font-size: 25px;
+  }
 }

@@ -1,10 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './HomePage.module.css';
 import Pizza from '../../assets/images/Pizza.png';
 import CarouselComponent from '../../components/Carousel Testimonios/CarouselComponent';
 import CarouselPhotos from '../../components/Carousel Fotos/CarouselPhotos';
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/menu');
+  };
   return (
     <div className={styles.container}>
       <div className={styles.containerPrimary}>
@@ -25,7 +32,7 @@ const HomePage = () => {
       </div>
       <div className={styles.containerMenu}>
         <p>Conoce nuestro amplio menu</p>
-        <button type='submit'>Visita nuestro menú!</button>
+        <button type='submit' onClick={handleSubmit}>Visita nuestro menú!</button>
       </div>
       <div className={styles.containerCarouselPhotos}><CarouselPhotos /></div>
       <div className={styles.containerInformation}>
