@@ -13,7 +13,7 @@ const CarouselComponent = () => {
         <div className={styles.carouselItem}>
           <SubCarousel
             nombre={"Cristian"}
-            msj={"Son especiales en hacer la masa de la pizza ¡Son un éxito!"}
+            msj={"La mejor masa de pizza ¡Son un éxito!"}
           />
         </div>
         <div className={styles.carouselItem}>
