@@ -68,6 +68,7 @@
     }
     .carouselInner,.carouselItem{
       height: 300px;
+      width: 800px;
     }
     .carouselInner h5{
       font-size: 80px;
