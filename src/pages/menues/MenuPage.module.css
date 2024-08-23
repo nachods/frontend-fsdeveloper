@@ -106,9 +106,9 @@ body {
     flex-wrap: wrap;
   }
 }
-@media (min-width: 1440px){
-    .Menu {
-        width: 470px;
-        margin: 20px 100px;
-      }
+@media (min-width: 1440px) {
+  .Menu {
+    width: 470px;
+    margin: 20px 100px;
+  }
 }

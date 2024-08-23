@@ -13,13 +13,15 @@
 }
 
 .navLeft img {
-    width: 237px;
+    width: 50px;
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 .closeSession,.carrito{
     margin: 5px;
     padding: 5px;
-    width: 120px;
+    width: 130px;
     background-color: #df3821;
     border: 1px solid #c4311e;
     border-radius: 10px;

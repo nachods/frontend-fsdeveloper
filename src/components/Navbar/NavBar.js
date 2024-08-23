@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './NavBar.module.css';
-import DesignNav from '../../assets/images/DiseñoNavBar.png';
+import Logo from '../../assets/images/logo.png';
 
 const NavBar = () => {
   const [showNavbar, setShowNavbar] = useState(true); //Visible o no el navbar, comienza en true para que se muestre cuando carga la pagina
@@ -32,15 +32,23 @@ const NavBar = () => {
     e.preventDefault(); // Evita que el formulario se envíe y recargue la página
     navigate('/login'); // Redirige al usuario a la página de inicio
   };
+  const handlePayout = (e) => {
+    e.preventDefault(); // Evita que el formulario se envíe y recargue la página
+    navigate('/payout'); // Redirige al usuario a la página de inicio
+  };
+  const handleHome = (e) => {
+    e.preventDefault(); // Evita que el formulario se envíe y recargue la página
+    navigate('/home'); // Redirige al usuario a la página de inicio
+  };
 
   return (
     //clase dinamica del primer div para saber cuando mostrarse, si es true muestra Visible, sino Hidden
     <div className={`${styles.NavBar} ${showNavbar ? styles.visible : styles.hidden}`}> 
       <div className={styles.navLeft}>
-        <img src={DesignNav} alt='navBar.png' />
+        <img src={Logo} alt='navBar.png' onClick={handleHome}/>
       </div>
       <div className={styles.navRight}>
-        <button className={styles.carrito}><i class="bi bi-cart"></i></button>
+        <button className={styles.carrito} onClick={handlePayout}><i class="bi bi-cart"></i></button>
         <button className={styles.closeSession} onClick={handleSubmit}>Cerrar Sesión</button>
       </div>
     </div>
