@@ -9,17 +9,18 @@ import NavBar from "../components/Navbar/NavBar";
 
 const AppRouter = () => {
   const location = useLocation();
-  const hideNavBar = location.pathname === '/' || location.pathname === '/login'; //evito que el navbar aparezcan en el login y register
+  const hideNavBar =
+    location.pathname === "/" || location.pathname === "/login"; //evito que el navbar aparezcan en el login y register
   return (
     <>
-      {!hideNavBar && <NavBar />} 
+      {!hideNavBar && <NavBar />}
       <Routes>
-        <Route path='/' element={<RegistrationForm />} />
-        <Route path='/login' element={<LoginForm />} />
-        <Route path='*' element={<LoginForm />} />
-        <Route path='/home' element={<HomePage />} />
-        <Route path='/menu' element={<MenuPage />} />
-        <Route path='/payout' element={<PayoutPage />} />
+        <Route path="/" element={<RegistrationForm />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="*" element={<LoginForm />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/menu" element={<MenuPage />} />
+        <Route path="/payout" element={<PayoutPage />} />
       </Routes>
     </>
   );
