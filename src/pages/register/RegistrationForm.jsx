@@ -11,6 +11,7 @@ const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
+    phone: '',
     email: '',
     password: '',
   });
@@ -46,7 +47,7 @@ validacion de formulario
       setSuccess('');
     }
   };
-  
+
 
 
   return (
@@ -67,6 +68,13 @@ validacion de formulario
           name="lastname"
           placeholder="Apellido"
           value={formData.lastname}
+          onChange={handleInputChange}
+        />
+        <input
+          type="number"
+          name="phone"
+          placeholder="Telefóno"
+          value={formData.phone}
           onChange={handleInputChange}
         />
         <input
