@@ -3,11 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 import Logo from '../../assets/images/logo.png';
 import AuthContext from '../../context/AuthContext'; // Asegúrate de importar el contexto correcto
+import { loginFetch } from '../../api/loginFetch';
 
 const LoginForm = () => {
   const { setUser, login } = useContext(AuthContext); // Usar login desde el contexto
   /* 
-  datos del formulario
+  Datos del formulario
   */
   const [formData, setFormData] = useState({
     email: '',
@@ -15,11 +16,11 @@ const LoginForm = () => {
   });
 
   /* 
-  validacion de formulario
+  Validación de formulario
   */
-  const [error, setError] = useState(null); // Estado de los msjs de error o correcto
+  const [error, setError] = useState(null); // Estado de los mensajes de error o correcto
 
-  const handleInputChange = (e) => { // Cambia los datos estaticos por los que ingresa el usuario
+  const handleInputChange = (e) => { // Cambia los datos estáticos por los que ingresa el usuario
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -27,32 +28,34 @@ const LoginForm = () => {
     });
   };
 
-  const navigate = useNavigate();
+  const Navigate = useNavigate(); // Usar useNavigate para redirigir
 
   /* 
-  obtener los datos del formulario de login
+  Obtener los datos del formulario de login
   */
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+	const handleSubmit = async (e) => {
+		e.preventDefault(); //evitamos recarga de pag
+		
+		try{
+			const { access } = await loginFetch(formData); //llamo a la funcion, donde le mando los datos, ademas de extraer el token
+			login(access); //funcion getme que mantiene la sesion abierta
+			localStorage.setItem('access', access); //hacemos esto para no perder el token al refrescar la pagina
 
-    try {
-      const accessToken = await login(formData); // Usa el método login del contexto
+			if(access){ //si hay acceso...
+				setUser({
+					firstname: 'Ignacio',
+					lastname: 'De Simone',
+					email: 'nacho@test.static.com',
+				});
+			};
 
-      if (accessToken) {
-        setUser({
-          firstname: 'Ignacio',
-          lastname: 'De Simone',
-          email: 'ignacio@test.com',
-        });
-      };
-
-      setError('');
-      navigate('/home'); // Navega a la página de inicio después del inicio de sesión
-    } catch (error) {
-      console.log(error);
-      setError('Error de servidor');
-    }
-  };
+			setError('');
+			Navigate('/home'); //envio al usuario al home
+		}catch(error){
+			console.log(error);
+			setError('Error del servidor');
+		}
+	};
 
   return (
     <div className={styles.gradientcontainer}>

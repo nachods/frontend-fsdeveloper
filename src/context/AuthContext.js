@@ -1,29 +1,37 @@
-import { createContext, useState } from "react";
-import { loginFetch } from "../api/loginFetch"; // Importar la función de loginFetch
+import { createContext, useEffect, useState } from "react";
+import { getMeFetch } from '../api/getMeFetch';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null); // user estático de momento
 
-  const login = async (data) => {
-    try {
-      const { access } = await loginFetch(data); // Usar loginFetch para obtener el token
-      setUser({ token: access }); // Actualizar el estado con el token
-      return access; // Devolver el token si se necesita en el componente
-    } catch (error) {
-      console.log(error);
-      throw error; // Propagar el error para que el componente lo maneje
-    }
-  };
+  useEffect(() => {
+    //hacemos esto para que se active al entrar a la pagina por primera vez
 
-  const logout = async () => {
-    // Función que termina de sesión
-    setUser(null); // Limpiar el estado del usuario
-  };
+    (async () => {
+      const token = localStorage.getItem("access");
+      console.log(token);
+      await login(token);
+    })();
+  }, []);
+
+  const login = async (token) =>{
+		try{
+			const user = await getMeFetch(token);
+			delete user.password;
+			setUser(user);
+		} catch(error){
+			console.log(error);
+		}
+	}
+
+  const logout = () => {
+		setUser(false); //se borra el user
+		localStorage.clear(); //se borra el local storage
+	}
 
   const data = {
-    // Datos a utilizar en todo el sitio
     user,
     setUser,
     login,

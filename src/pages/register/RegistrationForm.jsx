@@ -17,12 +17,12 @@ const RegistrationForm = () => {
   });
 
   /* 
-validacion de formulario
- */
-  const [error, setError] = useState(null); //Estado de los msjs de error o correcto
-  const [success, setSuccess] = useState(false);
+   validacion de formulario
+   */
+  const [error, setError] = useState(null); // Estado de los msjs de error o correcto
+  const [success, setSuccess] = useState(null);
 
-  const handleInputChange = (e) => { //Cambia los datos por los que manda el usuario
+  const handleInputChange = (e) => { // Cambia los datos por los que manda el usuario
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -31,30 +31,27 @@ validacion de formulario
   };
 
   /* 
-  obtener los datos del formulario de registro
+   obtener los datos del formulario de registro
    */
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // data
     try {
       const res = await registerFetch(formData); // Enviar datos del formulario
       console.log(res);
-      setError('');
+      setError(''); // Limpia el mensaje de error
       setSuccess(res.msg); // Msg proveniente del backend
     } catch (error) {
       console.log(error);
       setError(error.msg); // Msg proveniente del backend
-      setSuccess('');
+      setSuccess(''); // Limpia el mensaje de éxito
     }
   };
-
-
 
   return (
     <div className={styles.gradientcontainer}>
       <form className={styles.contform} onSubmit={handleSubmit}>
         <div className={styles.contlogo}>
-          <img className={styles.logo} src={Logo} alt='logo'></img>
+          <img className={styles.logo} src={Logo} alt='logo' />
         </div>
         <input
           type="text"
@@ -73,7 +70,7 @@ validacion de formulario
         <input
           type="number"
           name="phone"
-          placeholder="Telefóno"
+          placeholder="Teléfono"
           value={formData.phone}
           onChange={handleInputChange}
         />
@@ -92,8 +89,8 @@ validacion de formulario
           onChange={handleInputChange}
         />
         {error && <p className="alert alert-danger">{error}</p>}
+        {success && <p className="alert alert-success">{success}</p>}
         <button type='submit'>Registrarse</button>
-        {success && <p className="alert alert-success">Registro Completado</p>}
         <p>
           ¿Ya tienes una cuenta? <Link className={styles.link} to="/login">Iniciar sesión</Link>
         </p>
@@ -104,7 +101,6 @@ validacion de formulario
       </form>
     </div>
   );
-}
-///Los i de whatsapp e instagram deberian de ser botones, pero como no hay redes en si de la pagina, no lo hice
+};
 
 export default RegistrationForm;

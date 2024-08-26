@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './NavBar.module.css';
 import Logo from '../../assets/images/logo.png';
+import AuthContext from '../../context/AuthContext';
 
 const NavBar = () => {
   const [showNavbar, setShowNavbar] = useState(true); //Visible o no el navbar, comienza en true para que se muestre cuando carga la pagina
@@ -28,10 +29,7 @@ const NavBar = () => {
 
   const navigate = useNavigate(); // Hook para redirigir al usuario
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Evita que el formulario se envíe y recargue la página
-    navigate('/login'); // Redirige al usuario a la página de inicio
-  };
+  const { user, logout } = useContext(AuthContext);
   const handlePayout = (e) => {
     e.preventDefault(); // Evita que el formulario se envíe y recargue la página
     navigate('/payout'); // Redirige al usuario a la página de inicio
@@ -49,7 +47,7 @@ const NavBar = () => {
       </div>
       <div className={styles.navRight}>
         <button className={styles.carrito} onClick={handlePayout}><i class="bi bi-cart"></i></button>
-        <button className={styles.closeSession} onClick={handleSubmit}>Cerrar Sesión</button>
+        <button className={styles.closeSession} onClick={logout}>Cerrar Sesión</button>
       </div>
     </div>
   );
