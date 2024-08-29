@@ -89,8 +89,8 @@ const RegistrationForm = () => {
           onChange={handleInputChange}
         />
         {error && <p className="alert alert-danger">{error}</p>}
-        {success && <p className="alert alert-success">{success}</p>}
         <button type='submit'>Registrarse</button>
+        {success && <p className="alert alert-success">Registro Completado</p>}
         <p>
           ¿Ya tienes una cuenta? <Link className={styles.link} to="/login">Iniciar sesión</Link>
         </p>

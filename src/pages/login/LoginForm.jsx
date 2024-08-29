@@ -53,7 +53,7 @@ const LoginForm = () => {
 			Navigate('/home'); //envio al usuario al home
 		}catch(error){
 			console.log(error);
-			setError('Error del servidor');
+			setError(error.msg);
 		}
 	};
 

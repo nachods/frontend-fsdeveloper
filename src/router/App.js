@@ -11,30 +11,24 @@ import NavBar from "../components/Navbar/NavBar";
 const AppRouter = () => {
   const { user } = useContext(AuthContext);
   const location = useLocation();
-  const hideNavBar =
-    location.pathname === "/" || location.pathname === "/login"; //evito que el navbar aparezcan en el login y register
+
+  // Mostrar el NavBar solo si el usuario está autenticado y no está en las páginas de login o registro
+  const showNavBar = user && location.pathname !== "/" && location.pathname !== "/login";
+
   return (
     <>
-      {!hideNavBar && <NavBar />}
+      {showNavBar && <NavBar />}
       <Routes>
         <Route path="/" element={<RegistrationForm />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="*" element={<LoginForm />} />
-        {user ? (
+        {user && (
           <>
             <Route path="/home" element={<HomePage />} />
-          </>
-        ) : null}
-        {user ? (
-          <>
             <Route path="/payout" element={<PayoutPage />} />
-          </>
-        ) : null}
-        {user ? (
-          <>
             <Route path="/menu" element={<MenuPage />} />
           </>
-        ) : null}
+        )}
       </Routes>
     </>
   );
