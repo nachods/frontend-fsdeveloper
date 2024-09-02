@@ -5,6 +5,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null); // user estático de momento
+	const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     //hacemos esto para que se active al entrar a la pagina por primera vez
@@ -13,6 +14,7 @@ export const AuthProvider = ({ children }) => {
       const token = localStorage.getItem("access");
       console.log(token);
       await login(token);
+			setLoading(false);
     })();
   }, []);
 
@@ -37,6 +39,8 @@ export const AuthProvider = ({ children }) => {
     login,
     logout,
   };
+
+	if(loading) return null; //contenido extra para la carga de la pag
 
   return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>;
 };

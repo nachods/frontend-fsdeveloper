@@ -24,6 +24,15 @@ const RegistrationForm = () => {
 
   const handleInputChange = (e) => { // Cambia los datos por los que manda el usuario
     const { name, value } = e.target;
+
+    // Verificación para permitir solo números en el campo de teléfono
+    if (name === 'phone') {
+      const phoneRegex = /^[0-9]*$/;
+      if (!phoneRegex.test(value)) {
+        return; // Si el valor no es numérico, no actualiza el estado
+      }
+    }
+
     setFormData({
       ...formData,
       [name]: value,
@@ -68,7 +77,7 @@ const RegistrationForm = () => {
           onChange={handleInputChange}
         />
         <input
-          type="number"
+          type="tel"
           name="phone"
           placeholder="Teléfono"
           value={formData.phone}
