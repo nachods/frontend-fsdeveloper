@@ -30,6 +30,12 @@ const NavBar = () => {
   const navigate = useNavigate(); // Hook para redirigir al usuario
 
   const { user, logout } = useContext(AuthContext);
+  
+  const handleAdmin = (e) => {
+    e.preventDefault(); // Evita que el formulario se envíe y recargue la página
+    navigate('/admin'); // Redirige al usuario a la página de inicio
+  };
+  
   const handlePayout = (e) => {
     e.preventDefault(); // Evita que el formulario se envíe y recargue la página
     navigate('/payout'); // Redirige al usuario a la página de inicio
@@ -46,6 +52,7 @@ const NavBar = () => {
         <img src={Logo} alt='navBar.png' onClick={handleHome}/>
       </div>
       <div className={styles.navRight}>
+        {user.admin && <button className={styles.carrito} onClick={handleAdmin}><i class="bi bi-person-check-fill"></i></button> }
         <button className={styles.carrito} onClick={handlePayout}><i class="bi bi-cart"></i></button>
         <button className={styles.closeSession} onClick={logout}>Cerrar Sesión</button>
       </div>

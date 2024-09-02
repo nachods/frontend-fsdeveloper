@@ -6,6 +6,7 @@ import { AuthContext } from "../context/AuthContext";
 import HomePage from "../pages/home/HomePage";
 import MenuPage from "../pages/menues/MenuPage";
 import PayoutPage from "../pages/payout/PayoutPage";
+import AdminPage from "../pages/admin/AdminPage";
 import NavBar from "../components/Navbar/NavBar";
 
 const AppRouter = () => {
@@ -27,6 +28,7 @@ const AppRouter = () => {
             <Route path="/home" element={<HomePage />} />
             <Route path="/payout" element={<PayoutPage />} />
             <Route path="/menu" element={<MenuPage />} />
+            {user.admin && <Route path="/admin" element={<AdminPage />} />}
           </>
         )}
       </Routes>
