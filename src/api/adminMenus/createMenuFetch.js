@@ -1,19 +1,15 @@
-export const createMenu = async (data) => {
+export const createMenu = async (formData) => {
   try {
     const url = "http://localhost:3977/api/v1/menu";
 
-    const params = {
-      method: "POST", // Tipo de solicitud HTTP
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data), // Cadena Js a JSON, convierto el usuario
-    };
+    const response = await fetch(url, {
+      method: "POST",
+      body: formData, // Enviar FormData directamente
+    });
 
-    const response = await fetch(url, params);
     const result = await response.json();
 
-    if (response.status !== 200) throw result;
+    if (!response.ok) throw new Error(result.message || "Error en la solicitud");
     return result;
   } catch (error) {
     throw error;
