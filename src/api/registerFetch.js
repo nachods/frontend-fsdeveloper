@@ -3,9 +3,9 @@ export const registerFetch = async (data) => {
     const url = "http://localhost:3977/api/v1/auth/register"; // Donde envio los datos
 
     const params = {
-      method: 'POST', // Tipo de solicitud HTTP
+      method: "POST", // Tipo de solicitud HTTP
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data), // Cadena Js a JSON, convierto el usuario
     };

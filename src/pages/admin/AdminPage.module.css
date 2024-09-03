@@ -9,7 +9,6 @@ body {
 }
 /* Personas CSS */
 .containerPerson{
-  border: 1px solid red;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -61,10 +60,45 @@ body {
 
 /* Menus CSS */
 .containerMenu{
-  border: 1px solid red;
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding: 20px;
+}
+.titleMenu{
+  text-align: center;
+  font-size: 25px;
+}
+.inputMenu{
+  border: 2px solid #097d4c;
+  border-radius: 8px;
+  background-color: #0aa860;
+  margin-bottom: 15px;
+  color: #fff5d1;
+}
+.inputMenu::placeholder{
+  color: #fff5d1;
+}
+.inputMenu:hover{
+  color: #fff5d1;
+}
+.inputMenu option{
+  border: 2px solid #097d4c;
+  border-radius: 8px;
+}
+.StatusMenu{
+  color: #fff5d1;
+}
+.StatusMenu button{
+  margin-left: 10px;
+  border-radius: 100%;
+  margin-top: 2px;
+}
+.MenuList{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Pedidos CSS */

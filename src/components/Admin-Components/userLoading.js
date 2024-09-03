@@ -1,4 +1,3 @@
-// src/components/Admin-Components/userLoading.js
 import React, { useState, useEffect } from "react";
 import styles from "../../pages/admin/AdminPage.module.css"; // Asegúrate de que esta ruta sea correcta
 import { getAllUsers } from "../../api/adminUsers/getAllUsersFetch"; // Ajusta la ruta si es necesario
@@ -56,7 +55,7 @@ const UserLoading = () => {
       <h4 className={styles.titlePerson}>Sección de Usuarios</h4>
       <input className={styles.inputPerson}
         type="text"
-        placeholder="Buscar usuarios por nombre o apellido..."
+        placeholder="Buscar usuarios por nombre o apellido"
         value={searchUsers}
         onChange={(e) => setSearchUsers(e.target.value)}
       />
