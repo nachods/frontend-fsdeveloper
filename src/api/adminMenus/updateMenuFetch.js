@@ -1,13 +1,10 @@
-export const updateMenus = async (nombre, menuData) => {
+export const updateMenus = async (nombre, formData) => {
     try {
         const url = 'http://localhost:3977/api/v1/menu/' + nombre;
 
         const params = {
             method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(menuData),
+            body: formData,
         };
 
         const response = await fetch(url, params);

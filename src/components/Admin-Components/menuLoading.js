@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import styles from "../../pages/admin/AdminPage.module.css";
 import stylesMenus from "../../pages/menues/MenuPage.module.css";
 import CreateMenuLoading from "../Admin-Components/createMenuLoading";
+import UpdateMenuLoading from "../Admin-Components/updateMenuLoading";
 import { getAllMenus } from "../../api/adminMenus/getAllMenusFetch";
 import { updateMenus } from "../../api/adminMenus/updateMenuFetch";
+
 
 const MenuLoading = () => {
   const [menus, setMenus] = useState([]);
@@ -41,14 +43,20 @@ const MenuLoading = () => {
         throw new Error("No se encontró el menú para actualizar"); // Error si no se encuentra el menú
       }
   
-      const updatedData = {
-        detalle: menuToUpdate.detalle,
-        categoria: menuToUpdate.categoria,
-        precio: menuToUpdate.precio,
-        estado: !menuToUpdate.estado, // Cambiar el estado
-      };
+      // Crear un FormData para enviar los datos
+      const formData = new FormData();
+      formData.append('nombre', nombre); // Nombre del menú a actualizar
+      formData.append('detalle', menuToUpdate.detalle);
+      formData.append('categoria', menuToUpdate.categoria);
+      formData.append('precio', menuToUpdate.precio);
+      formData.append('estado', !menuToUpdate.estado); // Cambia el estado
   
-      await updateMenus(nombre, updatedData); // Envía la actualización al servidor
+      // Si hay una imagen nueva, deberías añadirla al FormData
+      if (menuToUpdate.image) {
+        formData.append('image', menuToUpdate.image); // Añade la imagen si existe
+      }
+  
+      await updateMenus(nombre, formData); // Envía la actualización al servidor
   
       // Refresca la lista de menús
       const updatedMenus = await getAllMenus();
@@ -57,6 +65,7 @@ const MenuLoading = () => {
       setError("Error al actualizar el menú"); // Mensaje de error en caso de fallo
     }
   };
+  
 
   const handleMenuCreated = async () => {
     try {
@@ -66,6 +75,15 @@ const MenuLoading = () => {
       setError("Error al cargar los menús");
     }
   };
+
+  const handleMenuUpdated = async () => {
+    try {
+      const data = await getAllMenus();
+      setMenus(data);
+    } catch (error) {
+      setError("Error al cargar los menús");
+    }
+  }
 
   return (
     <div className={styles.containerMenu}>
@@ -121,6 +139,10 @@ const MenuLoading = () => {
       <div className={styles.containerCreateMenu}>
         <h4 className={styles.titleMenu}>Crear un Menú</h4>
         <CreateMenuLoading onMenuCreated={handleMenuCreated} /> {/* Pasar la función para manejar la creación */}
+      </div>
+      <div className={styles.containerCreateMenu}>
+        <h4 className={styles.titleMenu}>Actualiza un Menú</h4>
+        <UpdateMenuLoading onMenuUpdated={handleMenuUpdated} />
       </div>
     </div>
   );
