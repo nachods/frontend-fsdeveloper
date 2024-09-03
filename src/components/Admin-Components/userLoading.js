@@ -53,14 +53,14 @@ const UserLoading = () => {
 
   return (
     <div className={styles.containerPerson}>
-      <h4>Sección de Usuarios</h4>
-      <input
+      <h4 className={styles.titlePerson}>Sección de Usuarios</h4>
+      <input className={styles.inputPerson}
         type="text"
         placeholder="Buscar usuarios por nombre o apellido..."
         value={searchUsers}
         onChange={(e) => setSearchUsers(e.target.value)}
       />
-      <select
+      <select className={styles.inputPerson}
         value={filterActive}
         onChange={(e) => setFilterActive(e.target.value)}
       >
@@ -71,10 +71,10 @@ const UserLoading = () => {
       <ul>
         {filteredUsers.length > 0 ? (
           filteredUsers.map((user) => (
-            <li key={`${user.firstname}-${user.lastname}`}>
+            <li key={`${user.firstname}-${user.lastname}`} className={styles.liPerson}>
               {user.firstname} {user.lastname} -{" "}
               {user.active ? "Activo" : "Inactivo"}
-              <button
+              <button className={`${user.active ? styles.buttonsuccess : styles.buttondanger}`}
                 onClick={() => handledUpdateUser(user.firstname, user.lastname)}
               >
                 <i className="bi bi-check-circle-fill"></i>

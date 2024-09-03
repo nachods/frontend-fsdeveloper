@@ -7,7 +7,68 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.containerPerson, .containerMenu, .containerPedidos{
+/* Personas CSS */
+.containerPerson{
+  border: 1px solid red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.titlePerson{
+  text-align: center;
+  font-size: 25px;
+}
+.inputPerson{
+  border: 2px solid #097d4c;
+  border-radius: 8px;
+  background-color: #0aa860;
+  margin-bottom: 15px;
+  color: #fff5d1;
+}
+.inputPerson::placeholder{
+  color: #fff5d1;
+}
+.inputPerson:hover{
+  color: #fff5d1;
+}
+.inputPerson option{
+  border: 2px solid #097d4c;
+  border-radius: 8px;
+}
+.liPerson{
+  display: flex;
+  align-items: center;
+  color: #df3821;
+  font-weight: 500;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #df3821;
+}
+.liPerson button{
+  margin-left: 10px;
+  border-radius: 100%;
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+.buttonsuccess{
+  border: 1px solid #097d4c;
+  background-color: #0aa860;
+}
+.buttondanger{
+  border: 1px solid #992f21;
+  background-color: #df3821;
+}
+
+/* Menus CSS */
+.containerMenu{
+  border: 1px solid red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Pedidos CSS */
+.containerPedidos{
   border: 1px solid red;
   width: 100%;
   display: flex;
