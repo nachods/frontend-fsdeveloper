@@ -98,6 +98,20 @@ body {
   border-radius: 100%;
   margin-top: 2px;
 }
+.DeleteMenu{
+  width: 250px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #992f21;
+  background-color: #df3821;
+  color: #fff5d1;
+  font-weight: 450;
+  transition: all 0.5s ease-in-out;
+}
+.DeleteMenu:hover{
+  background-color: #992f21;
+}
 .MenuList{
   list-style: none;
   display: flex;
@@ -114,6 +128,7 @@ body {
   padding: 15px;
   border: 5px solid #df3821;
   border-radius: 20px; 
+  margin-bottom: 2px;
 }
 .containerForm{
   display: flex;

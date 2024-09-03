@@ -58,7 +58,7 @@ const UpdateMenuLoading = ({ onMenuUpdated }) => {
           placeholder="Nombre (Obligatorio)"
           value={nombre}
           onChange={(e) => setNombre(e.target.value)}
-          required
+          required='true'
         />
         <input
           className={styles.inputForm}

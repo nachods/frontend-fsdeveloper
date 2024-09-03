@@ -5,7 +5,7 @@ import CreateMenuLoading from "../Admin-Components/createMenuLoading";
 import UpdateMenuLoading from "../Admin-Components/updateMenuLoading";
 import { getAllMenus } from "../../api/adminMenus/getAllMenusFetch";
 import { updateMenus } from "../../api/adminMenus/updateMenuFetch";
-
+import { deleteMenus } from "../../api/adminMenus/deleteMenuFetch";
 
 const MenuLoading = () => {
   const [menus, setMenus] = useState([]);
@@ -65,7 +65,19 @@ const MenuLoading = () => {
       setError("Error al actualizar el menú"); // Mensaje de error en caso de fallo
     }
   };
-  
+
+  // Maneja la eliminación de un menú
+  const handleDeleteMenu = async (nombre) => {
+    try {
+      await deleteMenus(nombre); // Llama a la función para eliminar el menú
+      // Refresca la lista de menús después de la eliminación
+      const updatedMenus = await getAllMenus();
+      setMenus(updatedMenus);
+    } catch (error) {
+      console.error(error);
+      setError(`Error al eliminar el menú: ${error.message}`); // Mensaje de error en caso de fallo
+    }
+  };
 
   const handleMenuCreated = async () => {
     try {
@@ -83,7 +95,7 @@ const MenuLoading = () => {
     } catch (error) {
       setError("Error al cargar los menús");
     }
-  }
+  };
 
   return (
     <div className={styles.containerMenu}>
@@ -127,6 +139,12 @@ const MenuLoading = () => {
                       <i className="bi bi-check-circle-fill"></i>
                     </button>
                   </div>
+                  <button 
+                    className={styles.DeleteMenu} 
+                    onClick={() => handleDeleteMenu(menu.nombre)}
+                  >
+                    Eliminar Menu
+                  </button>
                 </div>
               </div>
             </li>

@@ -67,6 +67,7 @@ const CreateMenuLoading = ({ onMenuCreated }) => {
           placeholder="Nombre"
           value={formData.nombre}
           onChange={handleInputChange}
+          required='true'
         />
         <input
           className={styles.inputForm}
@@ -75,6 +76,7 @@ const CreateMenuLoading = ({ onMenuCreated }) => {
           placeholder="Detalle"
           value={formData.detalle}
           onChange={handleInputChange}
+          required='true'
         />
         <input
           className={styles.inputForm}
@@ -83,6 +85,7 @@ const CreateMenuLoading = ({ onMenuCreated }) => {
           placeholder="Categoría"
           value={formData.categoria}
           onChange={handleInputChange}
+          required='true'
         />
         <input
           className={styles.inputForm}
@@ -91,6 +94,7 @@ const CreateMenuLoading = ({ onMenuCreated }) => {
           placeholder="Precio"
           value={formData.precio}
           onChange={handleInputChange}
+          required='true'
         />
         <input
           className={styles.inputFormImage}
@@ -98,6 +102,7 @@ const CreateMenuLoading = ({ onMenuCreated }) => {
           name="image"
           accept="image/*"
           onChange={handleFileChange}
+          required='true'
         />
         {preview && (
           <img
