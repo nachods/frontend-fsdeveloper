@@ -32,12 +32,13 @@ const MenuLoading = () => {
       menu.nombre.toLowerCase().includes(searchMenus.toLowerCase())
   );
 
+  // Maneja la actualización del estado de un menú
   const handledUpdateMenu = async (nombre) => {
     try {
       const menuToUpdate = menus.find((menu) => menu.nombre === nombre);
   
       if (!menuToUpdate) {
-        throw new Error("No se encontró el menú para actualizar");
+        throw new Error("No se encontró el menú para actualizar"); // Error si no se encuentra el menú
       }
   
       const updatedData = {
@@ -47,13 +48,22 @@ const MenuLoading = () => {
         estado: !menuToUpdate.estado, // Cambiar el estado
       };
   
-      await updateMenus(nombre, updatedData);
+      await updateMenus(nombre, updatedData); // Envía la actualización al servidor
   
       // Refresca la lista de menús
       const updatedMenus = await getAllMenus();
-      setMenus(updatedMenus);
+      setMenus(updatedMenus); // Actualiza la lista de menús
     } catch (error) {
-      setError("Error al actualizar el menú");
+      setError("Error al actualizar el menú"); // Mensaje de error en caso de fallo
+    }
+  };
+
+  const handleMenuCreated = async () => {
+    try {
+      const data = await getAllMenus(); // Refrescar los menús después de crear uno nuevo
+      setMenus(data);
+    } catch (error) {
+      setError("Error al cargar los menús");
     }
   };
 
@@ -108,9 +118,9 @@ const MenuLoading = () => {
         )}
       </ul>
       {error && <p>{error}</p>} {/* Mostrar mensajes de error */}
-      <div className={styles.containerMenu}>
+      <div className={styles.containerCreateMenu}>
         <h4 className={styles.titleMenu}>Crear un Menú</h4>
-        <CreateMenuLoading/>
+        <CreateMenuLoading onMenuCreated={handleMenuCreated} /> {/* Pasar la función para manejar la creación */}
       </div>
     </div>
   );

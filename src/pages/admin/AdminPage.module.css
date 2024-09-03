@@ -24,12 +24,14 @@ body {
   background-color: #0aa860;
   margin-bottom: 15px;
   color: #fff5d1;
+  transition: all 0.5s ease-in-out;
 }
 .inputPerson::placeholder{
   color: #fff5d1;
 }
 .inputPerson:hover{
   color: #fff5d1;
+  background-color: #0d9155;
 }
 .inputPerson option{
   border: 2px solid #097d4c;
@@ -75,12 +77,14 @@ body {
   background-color: #0aa860;
   margin-bottom: 15px;
   color: #fff5d1;
+  transition: all 0.5s ease-in-out;
 }
 .inputMenu::placeholder{
   color: #fff5d1;
 }
 .inputMenu:hover{
   color: #fff5d1;
+  background-color: #0d9155;
 }
 .inputMenu option{
   border: 2px solid #097d4c;
@@ -95,10 +99,79 @@ body {
   margin-top: 2px;
 }
 .MenuList{
+  list-style: none;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+/* Create Menu */
+.containerCreateMenu{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border: 5px solid #df3821;
+  border-radius: 20px; 
+}
+.containerForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 30px;
+}
+.inputForm, .inputFormImage{
+  border: 2px solid #097d4c;
+  border-radius: 8px;
+  background-color: #0aa860;
+  margin-bottom: 10px;
+  color: #fff5d1;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+.inputForm::placeholder{
+  color: #fff5d1;
+}
+.inputForm:hover{
+  color: #fff5d1;
+  background-color: #0d9155;
+}
+.inputFormImage{
+  position: relative;
+  display: inline-block;
+  transition: all 0.5s ease-in-out;
+}
+.inputFormImage::before{
+  background-color: #0aa860;
+  color: #fff5d1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  content: 'Seleccionar Imagen'; /* texto por defecto */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0
+}
+.inputFormImage:hover{
+  background-color: #0d9155;
+}
+.buttonCreateMenu{
+  width: 250px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #992f21;
+  background-color: #df3821;
+  color: #fff5d1;
+  font-weight: 450;
+  transition: all 0.5s ease-in-out;
+}
+.buttonCreateMenu:hover{
+  background-color: #992f21;
 }
 
 /* Pedidos CSS */
