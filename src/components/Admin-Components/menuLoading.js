@@ -73,6 +73,7 @@ const MenuLoading = () => {
       // Refresca la lista de menús después de la eliminación
       const updatedMenus = await getAllMenus();
       setMenus(updatedMenus);
+      setError(null);
     } catch (error) {
       console.error(error);
       setError(`Error al eliminar el menú: ${error.message}`); // Mensaje de error en caso de fallo
@@ -120,7 +121,7 @@ const MenuLoading = () => {
         {filteredMenus.length > 0 ? (
           filteredMenus.map((menu) => (
             <li key={menu.nombre}>
-              <div className={stylesMenus.Menu}>
+              <div className={styles.Menu}>
                 <img
                   src={"http://localhost:3977/" + menu.image}
                   alt={menu.nombre}
@@ -153,7 +154,6 @@ const MenuLoading = () => {
           <p>No hay menús para mostrar</p>
         )}
       </ul>
-      {error && <p>{error}</p>} {/* Mostrar mensajes de error */}
       <div className={styles.containerCreateMenu}>
         <h4 className={styles.titleMenu}>Crear un Menú</h4>
         <CreateMenuLoading onMenuCreated={handleMenuCreated} /> {/* Pasar la función para manejar la creación */}

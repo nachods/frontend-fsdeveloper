@@ -7,12 +7,10 @@ const PayoutPage = () => {
             <div className={styles.container}>
                 <h3>Tu Pedido<i class="bi bi-cart-check-fill"></i></h3>
                 <div className={styles.subContainer}>
-                    <img src='foto.png'></img>
-                    <p>Nombre</p>
-                    <p>precio</p>
+                    <p>Lista de productos</p>
                 </div>
                 <div className={styles.subTotal}>
-                    <p>suma de precios</p>
+                    <p>Total: Suma de precios</p>
                 </div>
             </div>
             <div className={styles.containerFooter}>

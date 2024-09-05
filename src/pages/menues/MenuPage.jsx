@@ -14,6 +14,7 @@ const MenuPage = () => {
             try {
                 const data = await getAllMenus();
                 setMenus(data);
+                setError(null)
             } catch (error) {
                 setError('Error en la carga de los menús');
             }
@@ -50,7 +51,6 @@ const MenuPage = () => {
                 ) : (
                     <p>No hay menús para mostrar</p>
                 )}
-                {error && <p>{error}</p>}
             </div>
             <div className={styles.containerFooter}>
                 <p>®Sabores De Italia - 2024</p>
