@@ -12,6 +12,7 @@ const HomePage = () => {
     e.preventDefault();
     navigate('/menu');
   };
+
   return (
     <div className={styles.container}>
       <div className={styles.containerPrimary}>

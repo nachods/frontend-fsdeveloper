@@ -6,8 +6,26 @@ body {
 .container {
   margin: 60px 10px;
   padding: 10px;
-  border: 4px solid #097d4c;
+  border: 4px solid #c4311e;
   border-radius: 10px;
+  background-color: #097d4c;
+  color: #fff5d1;
+}
+.textTotal{
+  font-weight: 500;
+}
+.PayoutButton {
+  background-color: #fff5d1;
+  padding: 5px 10px;
+  border: 2px solid #e4ddc3;
+  border-radius: 10px;
+  color: #097d4c;
+  font-weight: bold;
+  margin-right: 15px;
+  transition: all 0.5s ease-in-out;
+}
+.PayoutButton:hover {
+  background-color: #e4ddc3;
 }
 /*  */
 /*  */
