@@ -129,7 +129,32 @@ body {
   text-align: center;
   color: #097d4c;
 }
-
+/*  */
+/*  */
+.inputSearch{
+  width: 80%;
+  border: 2px solid #097d4c;
+  border-radius: 8px;
+  background-color: #0aa860;
+  margin-bottom: 15px;
+  color: #fff5d1;
+  transition: all 0.5s ease-in-out;
+}
+.inputSearch::placeholder{
+  color: #fff5d1;
+}
+.inputSearch:hover{
+  color: #fff5d1;
+  background-color: #0d9155;
+}
+.inputSearch option{
+  border: 2px solid #097d4c;
+  border-radius: 8px;
+}
+/*  */
+/*  */
+/*  */
+/*  */
 @media (min-width: 1024px) {
   .containerMenu {
     flex-direction: row;

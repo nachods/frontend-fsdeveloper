@@ -1,6 +1,6 @@
 export const getMePedidoFetch = async (usuarioID) => {
   try {
-    const url = `http://localhost:3977/api/v1/crear/${usuarioID}`;
+    const url = `http://localhost:3977/api/v1/pedidos/crear/${usuarioID}`;
 
     const params = {
       method: "GET",

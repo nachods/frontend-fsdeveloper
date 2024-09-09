@@ -11,6 +11,29 @@ body {
   background-color: #097d4c;
   color: #fff5d1;
 }
+/*  */
+/*  */
+.containerTitle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.containerTitle button{
+  margin-right: 20px;
+  color: #fff5d1;
+  font-size: 28px;
+  border: 4px solid #c4311e;
+  border-radius: 20px;
+  padding: 0px 10px;
+  background-color: #df3821;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.containerTitle button:hover{
+  background-color: #c4311e;
+}
+
 .textTotal{
   font-weight: 500;
 }

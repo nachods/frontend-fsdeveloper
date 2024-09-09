@@ -1,6 +1,6 @@
 export const createPedidoFetch = async (usuarioId, productos) => { 
     try {
-      const url = "http://localhost:3977/api/v1/crear";
+      const url = "http://localhost:3977/api/v1/pedidos/crear";
 
       const params = {
         method: "POST",

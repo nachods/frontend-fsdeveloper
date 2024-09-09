@@ -200,8 +200,74 @@ body {
 
 /* Pedidos CSS */
 .containerPedidos{
-  border: 1px solid red;
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+.titlePedidos{
+  text-align: center;
+  font-size: 25px;
+}
+.inputPedidos{
+  border: 2px solid #097d4c;
+  border-radius: 8px;
+  background-color: #0aa860;
+  margin-bottom: 15px;
+  color: #fff5d1;
+  transition: all 0.5s ease-in-out;
+}
+.inputPedidos::placeholder{
+  color: #fff5d1;
+}
+.inputPedidos:hover{
+  color: #fff5d1;
+  background-color: #0d9155;
+}
+.inputPedidos option{
+  border: 2px solid #097d4c;
+  border-radius: 8px;
+}
+.containerPedidos ul{
+  padding: 0px;
+}
+.liPedidos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #df3821;
+  font-weight: 500;
+  margin-bottom: 10px;
+  border: 5px solid #df3821;
+  border-radius: 20px;
+}
+.liPedidos button{
+  margin-left: 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  margin-top: 2px;
+}
+.buttonsuccessPedidos{
+  border: 1px solid #097d4c;
+  background-color: #0aa860;
+}
+.buttondangerPedidos{
+  border: 1px solid #992f21;
+  background-color: #df3821;
+}
+.buttonDeletePedidos {
+  width: 250px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #992f21;
+  background-color: #df3821;
+  color: #fff5d1;
+  font-weight: 450;
+  transition: all 0.5s ease-in-out;
+}
+.buttonDeletePedidos:hover{
+  background-color: #992f21;
 }
