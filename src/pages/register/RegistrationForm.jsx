@@ -3,11 +3,9 @@ import styles from './Registration.module.css';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/images/logo.png';
 import { registerFetch } from '../../api/registerFetch';
+import PasswordField from '../../components/PasswordField/PasswordField'; // Importa el componente
 
 const RegistrationForm = () => {
-  /* 
-  datos del formulario
-   */
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
@@ -16,20 +14,16 @@ const RegistrationForm = () => {
     password: '',
   });
 
-  /* 
-   validacion de formulario
-   */
-  const [error, setError] = useState(null); // Estado de los msjs de error o correcto
+  const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
 
-  const handleInputChange = (e) => { // Cambia los datos por los que manda el usuario
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
 
-    // Verificación para permitir solo números en el campo de teléfono
     if (name === 'phone') {
       const phoneRegex = /^[0-9]*$/;
       if (!phoneRegex.test(value)) {
-        return; // Si el valor no es numérico, no actualiza el estado
+        return;
       }
     }
 
@@ -39,20 +33,17 @@ const RegistrationForm = () => {
     });
   };
 
-  /* 
-   obtener los datos del formulario de registro
-   */
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await registerFetch(formData); // Enviar datos del formulario
+      const res = await registerFetch(formData);
       console.log(res);
-      setError(''); // Limpia el mensaje de error
-      setSuccess(res.msg); // Msg proveniente del backend
+      setError('');
+      setSuccess(res.msg);
     } catch (error) {
       console.log(error);
-      setError(error.msg); // Msg proveniente del backend
-      setSuccess(''); // Limpia el mensaje de éxito
+      setError(error.msg);
+      setSuccess('');
     }
   };
 
@@ -90,15 +81,14 @@ const RegistrationForm = () => {
           value={formData.email}
           onChange={handleInputChange}
         />
-        <input
-          type="password"
+        <PasswordField
           name="password"
           placeholder="Contraseña"
           value={formData.password}
           onChange={handleInputChange}
         />
         {error && <p className="alert alert-danger">{error}</p>}
-        <button type='submit'>Registrarse</button>
+        <button type='submit' className={styles.contformButton}>Registrarse</button>
         {success && <p className="alert alert-success">Registro Completado</p>}
         <p>
           ¿Ya tienes una cuenta? <Link className={styles.link} to="/login">Iniciar sesión</Link>

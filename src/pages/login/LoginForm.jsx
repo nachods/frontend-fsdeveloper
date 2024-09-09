@@ -2,25 +2,20 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 import Logo from '../../assets/images/logo.png';
-import AuthContext from '../../context/AuthContext'; // Asegúrate de importar el contexto correcto
+import AuthContext from '../../context/AuthContext';
 import { loginFetch } from '../../api/loginFetch';
+import PasswordField from '../../components/PasswordField/PasswordField'; // Importa el nuevo componente
 
 const LoginForm = () => {
-  const { setUser, login } = useContext(AuthContext); // Usar login desde el contexto
-  /* 
-  Datos del formulario
-  */
+  const { setUser, login } = useContext(AuthContext);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
 
-  /* 
-  Validación de formulario
-  */
-  const [error, setError] = useState(null); // Estado de los mensajes de error o correcto
+  const [error, setError] = useState(null);
 
-  const handleInputChange = (e) => { // Cambia los datos estáticos por los que ingresa el usuario
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -28,34 +23,31 @@ const LoginForm = () => {
     });
   };
 
-  const Navigate = useNavigate(); // Usar useNavigate para redirigir
+  const navigate = useNavigate();
 
-  /* 
-  Obtener los datos del formulario de login
-  */
-	const handleSubmit = async (e) => {
-		e.preventDefault(); //evitamos recarga de pag
-		
-		try{
-			const { access } = await loginFetch(formData); //llamo a la funcion, donde le mando los datos, ademas de extraer el token
-			login(access); //funcion getme que mantiene la sesion abierta
-			localStorage.setItem('access', access); //hacemos esto para no perder el token al refrescar la pagina
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-			if(access){ //si hay acceso...
-				setUser({
-					firstname: 'Ignacio',
-					lastname: 'De Simone',
-					email: 'nacho@test.static.com',
-				});
-			};
+    try {
+      const { access } = await loginFetch(formData);
+      login(access);
+      localStorage.setItem('access', access);
 
-			setError('');
-			Navigate('/home'); //envio al usuario al home
-		}catch(error){
-			console.log(error);
-			setError(error.msg);
-		}
-	};
+      if (access) {
+        setUser({
+          firstname: 'Ignacio',
+          lastname: 'De Simone',
+          email: 'nacho@test.static.com',
+        });
+      }
+
+      setError('');
+      navigate('/home');
+    } catch (error) {
+      console.log(error);
+      setError(error.msg);
+    }
+  };
 
   return (
     <div className={styles.gradientcontainer}>
@@ -70,15 +62,14 @@ const LoginForm = () => {
           value={formData.email}
           onChange={handleInputChange}
         />
-        <input
-          type="password"
+        <PasswordField
           name="password"
           placeholder="Contraseña"
           value={formData.password}
           onChange={handleInputChange}
         />
         {error && <p className="alert alert-danger">{error}</p>}
-        <button type='submit'>Iniciar Sesión</button>
+        <button type='submit' className={styles.contformButton}>Iniciar Sesión</button>
         <p>
           ¿No tienes una cuenta? <a className={styles.link} href="/">Regístrate ahora</a>
         </p>

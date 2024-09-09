@@ -45,7 +45,7 @@
   outline: none;
 }
 
-.contform button {
+.contformButton {
   padding: 10px;
   background-color: #0aa860;
   color: white;
@@ -56,7 +56,7 @@
   transition: all s;
 }
 
-.contform button:hover {
+.contformButton:hover {
   background-color: #097d4c; /* Color más oscuro al pasar el ratón */
 }
 
