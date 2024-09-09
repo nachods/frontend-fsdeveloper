@@ -1,6 +1,6 @@
-export const deleteMenus = async (nombre) => {
+export const deleteUserFetch = async (firstname, lastname) => {
   try {
-    const url = "http://localhost:3977/api/v1/menu/" + nombre;
+    const url = `http://localhost:3977/api/v1/user/delete/${firstname}/${lastname}`;
 
     const params = {
       method: "DELETE",

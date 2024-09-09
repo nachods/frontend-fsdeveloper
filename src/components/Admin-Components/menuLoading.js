@@ -10,8 +10,9 @@ import { deleteMenus } from "../../api/adminMenus/deleteMenuFetch";
 const MenuLoading = () => {
   const [menus, setMenus] = useState([]);
   const [error, setError] = useState(null); // Cargar y manejar errores
-  const [searchMenus, setSearchMenus] = useState(""); // Buscador
-  const [filterActive, setFilterActive] = useState("all"); // Filtrado
+  const [searchMenus, setSearchMenus] = useState(""); // Buscador por nombre
+  const [filterActive, setFilterActive] = useState("all"); // Filtrado por estado
+  const [filterCategory, setFilterCategory] = useState("all"); // Filtro por categoría
 
   useEffect(() => {
     // Se carga la función apenas carga la página
@@ -31,6 +32,7 @@ const MenuLoading = () => {
   const filteredMenus = menus.filter(
     (menu) =>
       (filterActive === "all" || String(menu.estado) === filterActive) &&
+      (filterCategory === "all" || menu.categoria === filterCategory) &&
       menu.nombre.toLowerCase().includes(searchMenus.toLowerCase())
   );
 
@@ -116,6 +118,16 @@ const MenuLoading = () => {
         <option value="all">Todos</option>
         <option value="true">Activos</option>
         <option value="false">Inactivos</option>
+      </select>
+      <select
+        className={styles.inputMenu}
+        value={filterCategory}
+        onChange={(e) => setFilterCategory(e.target.value)}
+      >
+        <option value="all">Todas las Categorías</option>
+        <option value="Pizza">Pizza</option>
+        <option value="Sandwich">Sandwich</option>
+        <option value="Empanadas">Empanadas</option>
       </select>
       <ul className={styles.MenuList}>
         {filteredMenus.length > 0 ? (

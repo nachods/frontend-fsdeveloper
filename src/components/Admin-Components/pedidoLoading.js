@@ -1,18 +1,15 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../pages/admin/AdminPage.module.css";
 import { getAllPedidos } from "../../api/adminPedidos/getAllPedidosFetch";
 import { updateStatusPedidoFetch } from "../../api/adminPedidos/updateStatusPedidoFetch";
 import { deletePedidoFetch } from '../../api/pedidos/deletePedidoFetch';
-import AuthContext from '../../context/AuthContext';
 
 const PedidoLoading = () => {
   const [pedidos, setPedidos] = useState([]);
   const [error, setError] = useState(null); // Manejar errores
   const [searchPedidos, setSearchPedidos] = useState(""); // Buscador
   const [filterActive, setFilterActive] = useState("all"); // Filtrado
-  const { user } = useContext(AuthContext);
 
-  const usuarioID = user._id;
 
   useEffect(() => {
     // Usar la función importada, cuando se carga la página
@@ -97,7 +94,7 @@ const PedidoLoading = () => {
                 ))}
               </ul>
               <p><strong>Total:</strong> ${pedido.total}</p>
-              <div>
+              <div className={styles.containerButtons}>
                 <button
                   className={pedido.estado === "Pago Pendiente" ? styles.buttonsuccessPedidos : styles.buttondangerPedidos}
                   onClick={() => handleEstadoChange(pedido._id, "Pago Pendiente")}

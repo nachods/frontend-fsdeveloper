@@ -59,7 +59,24 @@ body {
   border: 1px solid #992f21;
   background-color: #df3821;
 }
-
+.deleteUser{
+  color: #fff5d1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-left: 10px;
+  border-radius: 100%;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  border: 1px solid #992f21;
+  background-color: #df3821;
+  transition: all 0.5s ease-in-out;
+}
+.deleteUser:hover{
+  background-color: #992f21;
+}
 /* Menus CSS */
 .containerMenu{
   width: 100%;
@@ -244,7 +261,6 @@ body {
   border-radius: 20px;
 }
 .liPedidos button{
-  margin-left: 10px;
   border-radius: 20px;
   margin-bottom: 10px;
   margin-top: 2px;
@@ -270,4 +286,10 @@ body {
 }
 .buttonDeletePedidos:hover{
   background-color: #992f21;
+}
+.containerButtons{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }
