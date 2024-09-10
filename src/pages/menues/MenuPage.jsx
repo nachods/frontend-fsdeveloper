@@ -127,7 +127,7 @@ const MenuPage = () => {
                         <SubMenu
                             key={menu._id}
                             title={menu.nombre}
-                            picture={`http://localhost:3977/${menu.image}`}
+                            picture={`https://proyectfinal-backend-fsdeveloper-production.up.railway.app/${menu.image}`}
                             desc={menu.detalle}
                             price={`$${menu.precio}`}
                             onAddToCart={() => handleAddToCart({

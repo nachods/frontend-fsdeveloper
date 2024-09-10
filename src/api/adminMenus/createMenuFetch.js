@@ -1,6 +1,6 @@
 export const createMenu = async (formData) => {
   try {
-    const url = "http://localhost:3977/api/v1/menu";
+    const url = "https://proyectfinal-backend-fsdeveloper-production.up.railway.app/api/v1/menu";
 
     const response = await fetch(url, {
       method: "POST",

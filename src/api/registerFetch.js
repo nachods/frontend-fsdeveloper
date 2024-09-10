@@ -1,9 +1,9 @@
 export const registerFetch = async (data) => {
   try {
-    const url = "http://localhost:3977/api/v1/auth/register"; // Donde envio los datos
+    const url = "https://proyectfinal-backend-fsdeveloper-production.up.railway.app/api/v1/auth/register"; // Donde envio los datos
 
     const params = {
-      method: "POST", // Tipo de solicitud HTTP
+      method: "POST", // Tipo de solicitud https
       headers: {
         "Content-Type": "application/json",
       },

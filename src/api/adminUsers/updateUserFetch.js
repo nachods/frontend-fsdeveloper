@@ -1,9 +1,9 @@
 export const updateUsers = async (firstname, lastname) => {
     try {
-      const url = "http://localhost:3977/api/v1/user/all"; // URL de la API para actualizar el usuario
+      const url = "https://proyectfinal-backend-fsdeveloper-production.up.railway.app/api/v1/user/all"; // URL de la API para actualizar el usuario
   
       const params = {
-        method: 'PATCH', // Tipo de solicitud HTTP
+        method: 'PATCH', // Tipo de solicitud https
         headers: {
           'Content-Type': 'application/json', // Especifica el tipo de contenido como JSON
         },

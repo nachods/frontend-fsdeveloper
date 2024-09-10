@@ -1,6 +1,6 @@
 export const getMePedidoFetch = async (usuarioID) => {
   try {
-    const url = `http://localhost:3977/api/v1/pedidos/crear/${usuarioID}`;
+    const url = `https://proyectfinal-backend-fsdeveloper-production.up.railway.app/api/v1/pedidos/crear/${usuarioID}`;
 
     const params = {
       method: "GET",

@@ -135,7 +135,7 @@ const MenuLoading = () => {
             <li key={menu.nombre}>
               <div className={styles.Menu}>
                 <img
-                  src={"http://localhost:3977/" + menu.image}
+                  src={"https://proyectfinal-backend-fsdeveloper-production.up.railway.app/" + menu.image}
                   alt={menu.nombre}
                   className={stylesMenus.MenuImg}
                 />

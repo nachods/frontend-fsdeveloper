@@ -1,9 +1,9 @@
 export const getAllUsers = async () => {
   try {
-    const url = "http://localhost:3977/api/v1/user/all"; // URL de la API para obtener todos los usuarios
+    const url = "https://proyectfinal-backend-fsdeveloper-production.up.railway.app/api/v1/user/all"; // URL de la API para obtener todos los usuarios
 
     const params = {
-      method: "GET", // Tipo de solicitud HTTP
+      method: "GET", // Tipo de solicitud https
       headers: {
         "Content-Type": "application/json", // Especifica el tipo de contenido como JSON (opcional para GET)
       },
@@ -13,7 +13,7 @@ export const getAllUsers = async () => {
     const data = await response.json(); // Analizar respuesta pasando de JSON a objeto JavaScript
 
     if (response.status !== 200)
-      throw new Error(`Error HTTP! Estado: ${response.status}`); // Lanzar error si el estado no es 200
+      throw new Error(`Error https! Estado: ${response.status}`); // Lanzar error si el estado no es 200
 
     return data; // Si es exitoso, devolver los datos de los usuarios
   } catch (error) {

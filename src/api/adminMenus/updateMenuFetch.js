@@ -1,6 +1,6 @@
 export const updateMenus = async (nombre, formData) => {
     try {
-        const url = 'http://localhost:3977/api/v1/menu/' + nombre;
+        const url = 'https://proyectfinal-backend-fsdeveloper-production.up.railway.app/api/v1/menu/' + nombre;
 
         const params = {
             method: 'PATCH',

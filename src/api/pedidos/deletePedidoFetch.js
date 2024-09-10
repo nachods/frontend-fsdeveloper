@@ -1,6 +1,6 @@
 export const deletePedidoFetch = async (usuarioId) => {
     try {
-        const url = "http://localhost:3977/api/v1/pedidos/delete/" + usuarioId;
+        const url = "https://proyectfinal-backend-fsdeveloper-production.up.railway.app/api/v1/pedidos/delete/" + usuarioId;
     
         const params = {
           method: "DELETE",
@@ -12,7 +12,7 @@ export const deletePedidoFetch = async (usuarioId) => {
         const response = await fetch(url, params);
     
         if (response.status !== 200) {
-          throw new Error(`Error HTTP! Estado: ${response.status}`);
+          throw new Error(`Error https! Estado: ${response.status}`);
         }
     
         const data = await response.json();

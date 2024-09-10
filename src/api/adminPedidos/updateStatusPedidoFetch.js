@@ -1,6 +1,6 @@
 export const updateStatusPedidoFetch = async (pedidoID, nuevoEstado) => {
     try {
-      const url = "http://localhost:3977/api/v1/pedidos/status";
+      const url = "https://proyectfinal-backend-fsdeveloper-production.up.railway.app/api/v1/pedidos/status";
   
       const params = {
         method: "PATCH",

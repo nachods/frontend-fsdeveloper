@@ -1,9 +1,9 @@
 export const getAllMenus = async () => {
   try {
-    const url = "http://localhost:3977/api/v1/menu";
+    const url = "https://proyectfinal-backend-fsdeveloper-production.up.railway.app/api/v1/menu";
 
     const params = {
-      method: "GET", // Tipo de solicitud HTTP
+      method: "GET", // Tipo de solicitud https
       headers: {
         "Content-Type": "application/json",
       },
@@ -13,7 +13,7 @@ export const getAllMenus = async () => {
     const data = await response.json();
 
     if (response.status !== 200) {
-      throw new Error(`Error HTTP! Estado: ${response.status}`);
+      throw new Error(`Error https! Estado: ${response.status}`);
     }
 
     return data; // Si es exitoso, devolver los datos de los usuarios

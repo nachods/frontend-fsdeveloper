@@ -1,6 +1,6 @@
 export const getMeFetch = async (token) => {
   try {
-    const url = "http://localhost:3977/api/v1/user/me"; // Donde envío los datos
+    const url = "https://proyectfinal-backend-fsdeveloper-production.up.railway.app/api/v1/user/me"; // Donde envío los datos
 
     const params = {
       headers: {
