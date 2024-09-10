@@ -57,3 +57,10 @@ body {
     text-align: center;
     color: #097d4cd1;
 }
+
+@media (min-width: 1440px) {
+  .container{
+    margin-left: 180px;
+    margin-right: 180px;
+  }
+}

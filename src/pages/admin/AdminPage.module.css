@@ -293,3 +293,10 @@ body {
   flex-wrap: wrap;
   align-items: center;
 }
+
+@media (min-width: 1440px) {
+  .container{
+    margin-left: 180px;
+    margin-right: 180px;
+  }
+}
